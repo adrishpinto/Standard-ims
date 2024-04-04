@@ -1,0 +1,12 @@
+{
+    "firstName":"test",
+    "lastName":"test",
+    "email":"test@gmail.com",
+    "password":"asr",
+    "mobile":123,
+    "address":"test"
+}
+
+
+
+

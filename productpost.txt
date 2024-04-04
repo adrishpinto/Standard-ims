@@ -1,0 +1,11 @@
+{
+    "productname":"test",
+    "price":"300",
+    "category":"test",
+    "color":"black",
+    "image":"url",
+    "rating":5,
+    "description":"test_description",
+    "product_Id":"123a",
+    "quantity":20
+}

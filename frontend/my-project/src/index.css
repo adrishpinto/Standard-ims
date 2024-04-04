@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&display=swap');
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+.check{
+    color:blue;
+}
+
+.check2{
+    color:blue;
+}
+
+text[input] {
+    color: red;
+}
+
+.bg{
+  background-color: rgb(243, 243, 185);
+}
+
+.ani1 {
+    animation-name: example;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    position: absolute;
+    left: -500px;
+}
+@keyframes example {
+    0% {
+        left: -400px;
+    }
+
+    100% {
+        left: 965px;
+    }
+}
+
+.ani2 {
+    overflow: auto;
+    background: linear-gradient(210deg, rgba(8, 252, 98, 1) 1%, rgba(0, 212, 255, 1) 38%, rgba(17, 127, 162, 1) 66%, rgba(139, 0, 185, 1) 100%);
+    animation: gradient 15s ease infinite;
+    background-size: 400%;
+    background-attachment: fixed;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.ani3{
+    animation: fade 1.5s linear 3s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
