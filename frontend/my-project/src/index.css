@@ -9,13 +9,7 @@
     margin: 0;
     box-sizing: border-box;
 }
-.check{
-    color:blue;
-}
 
-.check2{
-    color:blue;
-}
 
 text[input] {
     color: red;
