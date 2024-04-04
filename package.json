@@ -5,5 +5,19 @@
     "mongodb": "4.1",
     "react-router-dom": "^6.22.3",
     "react-toggle-dark-mode": "^1.1.1"
-  }
+  },
+  "name": "main_project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "install-server": "cd backend && npm install",
+    "start-server": "cd backend && node app.js",
+    "install-client": "cd client && npm install",
+    "build-client": "cd client && npm run build",
+    "start-client": "cd client && npm run start"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
