@@ -6,25 +6,30 @@ import prodRouter from "./router/prodRouter.js"
 import orderRouter from "./router/orderRouter.js";
 import categoriesRouter from "./router/categoriesRouter.js";
 import orderPostRouter from "./router/orderPostRouter.js"
+import dotenv from 'dotenv';
+dotenv.config();
+
 const app = express();
 mongoose.connect(
-  "mongodb+srv://dbUser:1234@cluster0.ogktzwz.mongodb.net/?retryWrites=true&w=majority",
+  process.env.MONGODB_URI,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true
   }
 );
 const db = mongoose.connection.once('open', () => console.log('Database Connected...'));;
-
+const corsOptions = {
+  origin: "http://localhost:3000" // frontend URI (ReactJS)
+}
 db.on('error', (error) => console.log(error));
 app.use(express.static("public"))
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(orderRouter)
 app.use(regRouter);
 app.use(prodRouter);
 app.use(categoriesRouter)
 app.use(orderPostRouter)
-const port = 5000;
+const port = process.env.PORT;
  
 app.listen(port, ()=>console.log('Server is running in port '+ port));

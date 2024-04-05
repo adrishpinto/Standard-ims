@@ -14,7 +14,7 @@ import UserList from './components/userList/UserList.js';
 import Home from './components/home_page/Home.js'
 import Welcome from './components/user/Welcome.js';
 import Card from './components/Card.js';
-import UserHome from './components/home_page/UserHome.js'
+import FuncHome from './components/home_page/FuncHome.js'
 import Track from './components/home_page/Track.js'
 import Checkout from './components/user/Checkout.js';
 
@@ -27,7 +27,7 @@ function App() {
         <Routes>
         <Route path='/user/:id/home/orders' element={<Checkout/>}/>
         <Route path='/user/:id/home/track' element={<Track/>}/>
-          <Route path='/user/:id/home' element={<UserHome/>}/>
+          <Route path='/user/:id/home' element={<FuncHome/>}/>
           <Route path='/' element={<Home/>}/>
           <Route path='/user/:id' element={<Welcome/>}/>
           <Route path='/categories/add' element={<AddCategory/>}/>

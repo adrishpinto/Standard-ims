@@ -35,7 +35,7 @@ function Home() {
     return (  
         <div>
         
-            <div className=' w-full h-screen'>
+            <div className=' w-full h-full '>
                 <div className='relative h-[45vh]'>
                     <h1 className='text-8xl absolute font-semibold left-[50%] mt-40 border-b-4 border-white translate-x-[-50%] text-white'>Best Place For Shopping!</h1>
                     <img src={banner} alt="" className='w-full h-[45vh] border-b-4 border-black'/>
@@ -48,7 +48,7 @@ function Home() {
                 </div>
                 <div className='flex  w-full h-full'>
                 {/* side bar */}
-                <div className='w-[13%] bg-gray-900 sticky h-full'>
+                <div className='w-[13%] bg-gray-900 min-h-full'>
                 <div className=' mx-auto mt-12 w-64 rounded-[10px] ml-9'>
                     <h2 className='text-3xl border-b-2 w-36 border-slate-50 text-slate-100 mb-10 ml-6'>Categories</h2>
                             <ol className='text-3xl mt-3 text-slate-200 space-y-10 font-thin [&_li]:pl-5'>
@@ -92,7 +92,6 @@ function Home() {
             
                                      <FaStar color='orange' size={20}/>
                                      <p className='text-2xl'>{item.rating}</p>
-            
             
                              </div>
                              <p className='text-2xl'>Price: <span className="font-semibold">{item.price}</span></p>
