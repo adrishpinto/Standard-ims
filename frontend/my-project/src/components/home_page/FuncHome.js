@@ -14,13 +14,14 @@ import { IoIosLogOut } from "react-icons/io";
 import { useParams } from 'react-router-dom';
 
 
-function Home() {
+function Home(props) {
     const { id } = useParams();
     const [order_id, setOrderID] = useState("")
     
     useEffect(() => {
         getUser()
       }, [])
+      
     const getUser = async () => {
       const res = await axios.get(`http://localhost:5000/login/${id}`)
       setOrderID(`${res.data[0].password}`)
@@ -34,8 +35,10 @@ function Home() {
     const [quantity, setQuantity] = useState(1);
     const [products,setProducts] = useState([]);
     const [x,setX] = useState(0);
+
+
     useEffect(() => {
-      getProducts();
+        props.getData("http://localhost:5000/products", setProducts);
     }, [])
 
     useEffect(() => {
@@ -45,16 +48,13 @@ function Home() {
     const oc = () =>{
         alert(order_id);
     }
-    const getProducts = async () =>{
-        const res = await axios.get("http://localhost:5000/products")
-        setProducts(res.data); 
-    }
 
     const getCategory = async (id) =>{
       const res = await axios.get(`http://localhost:5000/category/${id}`)
         setProducts(res.data); 
     }
-    const getOneProduct = async (id) => {
+    
+    const getOneProduct = async (id) => {  // function is for add to cart
         const response =  await axios.get(`http://localhost:5000/products/${id}`)
         setName(response.data.productname);
         setDescription(response.data.description);
@@ -140,11 +140,11 @@ function Home() {
                                  className='flex items-baseline '><PiHeadphonesFill size={25}/><li className='hover:cursor-pointer hover:text-slate-400'> Headphones</li>
                                  </div>
                                 <div
-                                onClick={()=>getCategory("mouse")}
+                                onClick={()=>props.getData(`http://localhost:5000/category/mouse`, setProducts)}
                                  className='flex items-baseline '><FaMouse size={25}/><li className='hover:cursor-pointer hover:text-slate-400'> Mouse</li>
                                  </div>
                                  <div
-                                onClick={()=>getProducts()}
+                                onClick={()=>props.getData("http://localhost:5000/products", setProducts)}
                                  className='flex items-baseline '><FaAsterisk size={25}/><li className='hover:cursor-pointer hover:text-slate-400'>Show All</li>
                                  </div>
                             </ol>

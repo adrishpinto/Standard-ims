@@ -1,5 +1,4 @@
 
-import './App.css';
 import Register from './components/sign_up/Register.js';
 import Login from './components/sign_up/Login.js'
 import EditProduct from './components/product/EditProduct.js'
@@ -18,19 +17,28 @@ import FuncHome from './components/home_page/FuncHome.js'
 import Track from './components/home_page/Track.js'
 import Checkout from './components/user/Checkout.js';
 import Slider from './components/home_page/MySlider.js';
+import axios from 'axios';
 
+const getData = async (url,setData) => {
+  const res = await axios.get(url);
+  setData(res.data); 
+}
 
+const getDataId = async (url,setData, id) => {
+  const res = await axios.get(`${url}/${id}`);
+  setData(res.data); 
+}
 
 function App() {
   return (
     <BrowserRouter>
       <div>
         <Routes>
-        <Route path='/Slider' element={<Slider/>}/>
-        <Route path='/user/:id/home/orders' element={<Checkout/>}/>
-        <Route path='/user/:id/home/track' element={<Track/>}/>
-          <Route path='/user/:id/home' element={<FuncHome/>}/>
           <Route path='/' element={<Home/>}/>
+          <Route path='/user/:id/home/orders' element={<Checkout/>}/>
+          <Route path='/user/:id/home/track' element={<Track/>}/>
+          <Route path='/user/:id/home' element={<FuncHome getData = {getData}/>}/>
+          <Route path='/Slider' element={<Slider/>}/>
           <Route path='/user/:id' element={<Welcome/>}/>
           <Route path='/categories/add' element={<AddCategory/>}/>
           <Route path='/card' element={<Card/>}/>
@@ -39,7 +47,7 @@ function App() {
           <Route path='/orders' element={<OrderTable />} />
           <Route path='/nav' element={<Navbar name="products" />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/product/add" element={<AddProduct />} />
+          <Route path="/product/add" element={<AddProduct/>} />
           <Route path="/products/edit/:id" element={<EditProduct />} />
           <Route path="/login" element={<Login />} />
           <Route path="/products" element={<ProductTable />} />
