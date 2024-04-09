@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import banner from '../../assets/banner1.jpg'
+import banner from '../../assets/banner1.jpeg'
 import { FaLaptop } from "react-icons/fa";
 import { MdOutlinePhoneAndroid } from "react-icons/md";
 import { MdWatch } from "react-icons/md";
@@ -81,10 +81,10 @@ function Home() {
                 </div>
                 {/* side bar */}
                 
-                <div className=' w-[87%] px-20 py-20 flex flex-wrap'>
+                <div className='w-[87%] px- py-20 flex  flex-wrap ml-24'>
                       {products.map((item)=>{
                       return(
-                        <div className='h-[520px] border border-slate-400 w-96 bg-slate-200 relative m-5'>
+                        <div className='h-[520px] border border-slate-400 w-96 bg-slate-200 relative mr-20 my-10 '>
                          <img src={`${item.image}`} onClick={()=>{setExt(ext + 1)}} className={`bg-slate-200 h-[350px] ${ext % 2 == 1 ? "w-20" : ""} `}></img>
                          <div className='py-2 px-3'>
                              <div className='flex items-baseline'>

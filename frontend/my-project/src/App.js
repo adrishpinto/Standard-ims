@@ -17,6 +17,7 @@ import Card from './components/Card.js';
 import FuncHome from './components/home_page/FuncHome.js'
 import Track from './components/home_page/Track.js'
 import Checkout from './components/user/Checkout.js';
+import Slider from './components/home_page/MySlider.js';
 
 
 
@@ -25,6 +26,7 @@ function App() {
     <BrowserRouter>
       <div>
         <Routes>
+        <Route path='/Slider' element={<Slider/>}/>
         <Route path='/user/:id/home/orders' element={<Checkout/>}/>
         <Route path='/user/:id/home/track' element={<Track/>}/>
           <Route path='/user/:id/home' element={<FuncHome/>}/>

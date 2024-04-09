@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import banner from '../../assets/banner1.jpg'
+import banner from '../../assets/banner1.jpeg'
 import { MdOutlinePhoneAndroid } from "react-icons/md";
 import { MdWatch } from "react-icons/md";
 import { PiHeadphonesFill } from "react-icons/pi";
@@ -150,12 +150,14 @@ function Home() {
                             </ol>
                 </div>
                 </div>
-                {/* side bar */}
+                {/* side bar end */}
                 
-                <div className=' w-[87%] px-20 py-20 flex  flex-wrap'>
+                {/* product map start*/}
+                
+                <div className=' w-[87%] px- py-20 flex  flex-wrap ml-24'>
                       {products.map((item)=>{
                       return(
-                        <div className='h-[520px] border border-slate-400 w-96 bg-slate-200 relative m-5'>
+                        <div className='h-[520px] border border-slate-400 w-96 bg-slate-200 relative mr-20 my-10  '>
                          <img src={`${item.image}`} className='bg-slate-200 h-[350px] pt-2'></img>
                          <div className='py-2 px-3'>
                              <div className='flex items-baseline'>
